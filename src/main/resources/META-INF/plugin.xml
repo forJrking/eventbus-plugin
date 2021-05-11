@@ -1,0 +1,54 @@
+<idea-plugin>
+    <id>com.madrapps.eventbus-plugin</id>
+    <name>GreenRobot EventBus</name>
+    <vendor email="fojrking@gmail.com" url="https://github.com/fojrking">forjrking</vendor>
+
+    <description><![CDATA[
+    <p>Support navigation for <b>Java/Kotlin</b> projects that uses greenrobot's <a href="http://greenrobot.org/eventbus/">EventBus</a> library</p><br/>
+    <p>Features</p>
+        <ul>
+            <li>Supports <i>post</i>, <i>postSticky</i> and <i>@Subscribe</i></li>
+            <li>Jump from post to subscribe and vice versa</li>
+            <li>Shows marker only for <i>@Subscribe</i> methods that have correct signatures</li>
+            <li>Optionally show usages in 'Find' tool window</li>
+            <li>Add breakpoints to all usages in a single click</li>
+            <li>Fully supported for project using both Java and Kotlin</li>
+        </ul>]]>
+    </description>
+
+    <depends>com.intellij.modules.lang</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+<!--        <codeInsight.lineMarkerProvider language="kotlin"-->
+<!--                                        implementationClass="com.madrapps.eventbus.subscribe.SubscribeLineMarkerProvider"/>-->
+<!--        <codeInsight.lineMarkerProvider language="JAVA"-->
+<!--                                        implementationClass="com.madrapps.eventbus.subscribe.SubscribeLineMarkerProvider"/>-->
+
+<!--        <codeInsight.lineMarkerProvider language="kotlin"-->
+<!--                                        implementationClass="com.madrapps.eventbus.post.PostLineMarkerProvider"/>-->
+<!--        <codeInsight.lineMarkerProvider language="JAVA"-->
+<!--                                        implementationClass="com.madrapps.eventbus.post.PostLineMarkerProvider"/>-->
+
+        <codeInsight.lineMarkerProvider language="kotlin"
+            implementationClass="com.madrapps.eventbus_nav.lineprovider.EventBus3LineMarkerProvider"/>
+        <codeInsight.lineMarkerProvider language="JAVA"
+            implementationClass="com.madrapps.eventbus_nav.lineprovider.EventBus3LineMarkerProvider"/>
+    </extensions>
+
+<!--    <actions>-->
+<!--        &lt;!&ndash; Add your actions here &ndash;&gt;-->
+<!--        <action id="com.madrapps.eventbus_nav.action.MarkPosterAction"-->
+<!--            class="com.madrapps.eventbus_nav.action.MarkPosterAction" text="Mark as Poster Method"-->
+<!--            description="Mark as poster Method" icon="/icons/add.svg">-->
+<!--            <add-to-group group-id="EditorPopupMenu" anchor="last" />-->
+<!--        </action>-->
+<!--        <action id="com.madrapps.eventbus_nav.action.UnMarkPosterAction"-->
+<!--            class="com.madrapps.eventbus_nav.action.UnMarkPosterAction" text="Unmark as Poster Method"-->
+<!--            description="Unmark as poster method" icon="/icons/remove.svg">-->
+<!--            <add-to-group group-id="EditorPopupMenu" anchor="last" />-->
+<!--        </action>-->
+<!--    </actions>-->
+
+</idea-plugin>
